@@ -25,11 +25,7 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        stage('metric_check') {
-            steps{
-                bat 'mvn cobertura:cobertura -D cobertura.report.format=xml'
-            }
-        }
+       
         stage('package') {
             steps{
                 bat 'mvn package'
